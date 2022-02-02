@@ -8,14 +8,14 @@ public class Demo extends SelectorsGoogle{
 
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver" , "C:\\Users\\Ewelina\\Downloads\\chromedriver.exe");
+        System.setProperty(webDriverChromeDriver , chromeBrowserExePath);
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(website);
         System.out.println(driver.getTitle());
         driver.findElement(By.xpath(button_cookie)).click();
         driver.findElement(By.xpath(button_search)).sendKeys("pogoda", Keys.ENTER);
-
+        assert driver.findElement(By.id(button_temp)).isEnabled();
 
         driver.quit();
         System.out.println("TEST PASSED");
