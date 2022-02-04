@@ -2,12 +2,12 @@ package sample;
 import org.testng.annotations.Test;
 
 
-public class SeleniumTests extends SelectorsAndMethods {
+public class SeleniumTests extends Methods {
 
-    @Test
-    public void test_google() {
-        googleSearch();
-    }
+//    @Test
+//    public void test_google() {
+//        googleSearch();
+//    }
 
     @Test
     public void test_testarena() {
