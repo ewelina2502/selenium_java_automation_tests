@@ -126,4 +126,24 @@ public class Methods extends SelectorsAndGenerators {
         driver.quit();
     }
 
+    public static void testChecboxes() {
+        start();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(websiteCheckbox);
+        driver.findElement(By.xpath(checkboxes)).click();
+        driver.findElement(By.xpath(checkboxesOut)).click();
+        driver.quit();
+    }
+
+    public static void testDownloadFile(){
+        start();
+        WebDriver driver= new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(webSiteDownload);
+        WebElement addFile = driver.findElement(By.xpath(downloadFile));
+        addFile.sendKeys("/Users/Ewelina/Desktop/2021-11-02_15-13.png");
+        driver.findElement(By.xpath(downloadFile)).click();
+    }
+
 }

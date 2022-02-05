@@ -39,5 +39,15 @@ public class SeleniumTests extends Methods {
         testTravel();
     }
 
+    @Test
+    public void test_checkboxes() {
+        testChecboxes();
+    }
+
+    @Test
+    public void test_download_file(){
+        testDownloadFile();
+    }
+
 }
 

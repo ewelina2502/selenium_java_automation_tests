@@ -69,6 +69,10 @@ public class SelectorsAndGenerators {
     static String productButton = "/html/body/header/div/nav/div[2]/span";
     static String howToStartButton = "/html/body/header/div/nav/div[2]/div/a[14]";
 
+    static String websiteCheckbox = "http://the-internet.herokuapp.com/checkboxes";
+    static String checkboxes = "//*[@id='checkboxes']/input[1]";
+    static String checkboxesOut = "//*[@id='checkboxes']/input[2]";
 
-
+    static String webSiteDownload = "http://the-internet.herokuapp.com/download";
+    static String downloadFile = "//*[@id='content']/div/a[1]";
 }
