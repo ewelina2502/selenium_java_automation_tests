@@ -63,9 +63,12 @@ public class SelectorsAndGenerators {
     static String myOlxLogout = "//*[@id='topLoginLink']";
     static String zalogujSie = "se_userLogin";
     static String wylogujSie = "//*[@id='login-box-logout']";
+    static String allertError = "//*[@id='se_emailError']/div/label";
 
     static String webSiteTravels = "https://phptravels.com/demo";
     static String productButton = "/html/body/header/div/nav/div[2]/span";
     static String howToStartButton = "/html/body/header/div/nav/div[2]/div/a[14]";
+
+
 
 }

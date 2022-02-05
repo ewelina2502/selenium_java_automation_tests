@@ -12,7 +12,6 @@ public class Methods extends SelectorsAndGenerators {
 
     public static void start() {
         System.setProperty(webDriverChromeDriver, chromeBrowserExePath);
-
     }
 
     public static void googleSearch() {
@@ -25,7 +24,6 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.xpath(button_search)).sendKeys("pogoda", Keys.ENTER);
         assert driver.findElement(By.id(button_temp)).isEnabled();
         driver.quit();
-
     }
 
     public static void testarena() {
@@ -46,7 +44,6 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.xpath(correct_adding));
         System.out.println("TEST PASSED");
         driver.quit();
-
     }
 
     public static void testAutomationShop(){
@@ -62,7 +59,6 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.id(submit_button_selector)).click();
         assert driver.findElement(By.cssSelector(success_email_sent_selector)).isEnabled();
         driver.quit();
-
     }
 
     public static void testAutomationShopWithoutEmail(){
@@ -77,7 +73,6 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.id(submit_button_selector)).click();
         assert driver.findElement(By.cssSelector(alert_message_selector)).isEnabled();
         driver.quit();
-
     }
 
     public static void testOlx() throws InterruptedException {
@@ -88,6 +83,7 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.xpath(acceptCookies)).click();
         driver.findElement(By.xpath(myOlxButton)).click();
         driver.findElement(By.id(userEmail)).sendKeys("ewelina2502@o2.pl");
+        Thread.sleep(1000);
         driver.findElement(By.id(userPassword)).sendKeys("Testowy123");
         driver.findElement(By.id(zalogujSie)).click();
 
@@ -97,6 +93,20 @@ public class Methods extends SelectorsAndGenerators {
         actions.moveToElement(menuOption).perform();
         WebElement subMenuOption = driver.findElement(By.xpath(wylogujSie));
         actions.moveToElement(subMenuOption).click().perform();
+        driver.quit();
+    }
+
+    public static void testNegatiwyOlxWithoutEmail() throws InterruptedException {
+        start();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(webSiteOlx);
+        driver.findElement(By.xpath(acceptCookies)).click();
+        driver.findElement(By.xpath(myOlxButton)).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id(userPassword)).sendKeys("Testowy123");
+        driver.findElement(By.id(zalogujSie)).click();
+        assert driver.findElement(By.xpath(allertError)).isEnabled();
         driver.quit();
 
     }
@@ -108,7 +118,7 @@ public class Methods extends SelectorsAndGenerators {
         driver.get(webSiteTravels);
 
         Actions actions = new Actions(driver);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         WebElement productMenu = driver.findElement(By.xpath(productButton));
         actions.moveToElement(productMenu).perform();
         WebElement startButton = driver.findElement(By.xpath(howToStartButton));

@@ -30,6 +30,11 @@ public class SeleniumTests extends Methods {
     }
 
     @Test
+    public void test_negative_olx() throws InterruptedException {
+        testNegatiwyOlxWithoutEmail();
+    }
+
+    @Test
     public void test_travel() throws InterruptedException {
         testTravel();
     }
