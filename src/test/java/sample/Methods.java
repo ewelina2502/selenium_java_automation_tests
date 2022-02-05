@@ -146,4 +146,15 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.xpath(downloadFile)).click();
     }
 
+    public static void testLogAuth(){
+        start();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(webSiteAuth);
+        driver.quit();
+
+    }
+
+
+
 }

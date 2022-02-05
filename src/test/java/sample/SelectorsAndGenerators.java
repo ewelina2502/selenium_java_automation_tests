@@ -24,6 +24,10 @@ public class SelectorsAndGenerators {
     static String button_testarena_project_desc = "description";
     static String button_testarena_save = "save";
     static String correct_adding = "//*[@id='j_info_box']";
+    static String projectsButton = "//*[@id='wrapper']/ul/li[1]/a";
+    static String searchField = "//*[@id='search']";
+    static String searchButton = "//*[@id='j_searchButton']";
+    static String statusActive = "//*[@id='content']/article/table/tbody/tr/td[3]";
 
     public static CharSequence printGenerator() {
         com.github.javafaker.Faker faker = new com.github.javafaker.Faker(new Locale("no"));
@@ -31,7 +35,7 @@ public class SelectorsAndGenerators {
     }
 
     public static String generatorRandom () {
-        return RandomStringUtils.randomAlphabetic(7).substring(0, 6).toUpperCase() + RandomStringUtils.randomAlphabetic(5);
+        return RandomStringUtils.randomAlphabetic(6).substring(0, 6).toUpperCase() + RandomStringUtils.randomAlphabetic(6);
     }
 
     public static String emailGenerator() {
@@ -75,4 +79,11 @@ public class SelectorsAndGenerators {
 
     static String webSiteDownload = "http://the-internet.herokuapp.com/download";
     static String downloadFile = "//*[@id='content']/div/a[1]";
+
+    static String userN = "user";
+    static String passN = "admin";
+    static String webSiteAuth = userN +":"+ passN + "@" + "http://the-internet.herokuapp.com/basic_auth";
+
+
+
 }

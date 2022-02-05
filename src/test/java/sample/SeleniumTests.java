@@ -49,5 +49,12 @@ public class SeleniumTests extends Methods {
         testDownloadFile();
     }
 
+    @Test
+    public void test_log_Auth(){
+        testLogAuth();
+    }
+
+
+
 }
 
