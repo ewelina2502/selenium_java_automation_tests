@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 public class SeleniumTests extends Methods {
 
-//    @Test
-//    public void test_google() {
-//        googleSearch();
-//    }
+    @Test
+    public void test_google() {
+        googleSearch();
+    }
 
     @Test
     public void test_testarena() {
@@ -17,7 +17,22 @@ public class SeleniumTests extends Methods {
     @Test
     public void test_automation_shop() {
         testAutomationShop();
-
     }
+
+    @Test
+    public void test_automation_shop_without_email() {
+        testAutomationShopWithoutEmail();
+    }
+
+    @Test
+    public void test_olx() throws InterruptedException {
+        testOlx();
+    }
+
+    @Test
+    public void test_travel() throws InterruptedException {
+        testTravel();
+    }
+
 }
 

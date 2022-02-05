@@ -2,10 +2,13 @@ package sample;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 
-public class Methods extends Selectors {
+
+public class Methods extends SelectorsAndGenerators {
 
     public static void start() {
         System.setProperty(webDriverChromeDriver, chromeBrowserExePath);
@@ -38,7 +41,7 @@ public class Methods extends Selectors {
         driver.findElement(By.xpath(button_testarena_add)).click();
         driver.findElement(By.id(button_testarena_project_name)).sendKeys(generatorRandom());
         driver.findElement(By.id(button_testarena_project_prefix)).sendKeys(generatorRandom());
-        driver.findElement(By.id(button_testarena_project_desc)).sendKeys("text");
+        driver.findElement(By.id(button_testarena_project_desc)).sendKeys(printGenerator());
         driver.findElement(By.id(button_testarena_save)).click();
         driver.findElement(By.xpath(correct_adding));
         System.out.println("TEST PASSED");
@@ -54,12 +57,63 @@ public class Methods extends Selectors {
         driver.findElement(By.xpath(button_contact_us)).click();
         driver.findElement(By.xpath(subject_selector)).click();
         driver.findElement(By.xpath(choice_one)).click();
-        driver.findElement(By.id(email_selector)).sendKeys("seleniumwsh@gmail.com");
-        driver.findElement(By.id(message_selector)).sendKeys("text message");
+        driver.findElement(By.id(email_selector)).sendKeys(emailGenerator());
+        driver.findElement(By.id(message_selector)).sendKeys(printGenerator());
         driver.findElement(By.id(submit_button_selector)).click();
         assert driver.findElement(By.cssSelector(success_email_sent_selector)).isEnabled();
         driver.quit();
 
+    }
+
+    public static void testAutomationShopWithoutEmail(){
+        start();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(webSiteShop);
+        driver.findElement(By.xpath(button_contact_us)).click();
+        driver.findElement(By.xpath(subject_selector)).click();
+        driver.findElement(By.xpath(choice_one)).click();
+        driver.findElement(By.id(message_selector)).sendKeys(printGenerator());
+        driver.findElement(By.id(submit_button_selector)).click();
+        assert driver.findElement(By.cssSelector(alert_message_selector)).isEnabled();
+        driver.quit();
+
+    }
+
+    public static void testOlx() throws InterruptedException {
+        start();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(webSiteOlx);
+        driver.findElement(By.xpath(acceptCookies)).click();
+        driver.findElement(By.xpath(myOlxButton)).click();
+        driver.findElement(By.id(userEmail)).sendKeys("ewelina2502@o2.pl");
+        driver.findElement(By.id(userPassword)).sendKeys("Testowy123");
+        driver.findElement(By.id(zalogujSie)).click();
+
+        Actions actions = new Actions(driver);
+        Thread.sleep(5000);
+        WebElement menuOption = driver.findElement(By.xpath(myOlxLogout));
+        actions.moveToElement(menuOption).perform();
+        WebElement subMenuOption = driver.findElement(By.xpath(wylogujSie));
+        actions.moveToElement(subMenuOption).click().perform();
+        driver.quit();
+
+    }
+
+    public static void testTravel() throws InterruptedException {
+        start();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(webSiteTravels);
+
+        Actions actions = new Actions(driver);
+        Thread.sleep(5000);
+        WebElement productMenu = driver.findElement(By.xpath(productButton));
+        actions.moveToElement(productMenu).perform();
+        WebElement startButton = driver.findElement(By.xpath(howToStartButton));
+        actions.moveToElement(startButton).click().perform();
+        driver.quit();
     }
 
 }

@@ -1,18 +1,14 @@
 package sample;
 
-import org.openqa.selenium.chrome.ChromeDriver;
-
-
 public class AutomateDraft {
 
     public static void main(String[] args) {
 
-        ChromeDriver driver = new ChromeDriver();
 
-        driver.manage().window().maximize();
-        driver.get("https://www.google.pl/");
-        System.out.println(driver.getTitle());
-        driver.quit();
+        com.github.javafaker.Faker faker = new com.github.javafaker.Faker();
+        String email = faker.name().firstName().substring(0, 4).toLowerCase() + "." + faker.name().lastName().substring(0,5).toLowerCase() + "@email.com";
+        System.out.println(email);
 
     }
+
 }

@@ -1,13 +1,9 @@
 package sample;
-
 import org.apache.commons.lang3.RandomStringUtils;
-
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.Locale;
-import java.util.Random;
 
-public class Selectors {
+
+public class SelectorsAndGenerators {
 
     static String webDriverChromeDriver = "webdriver.chrome.driver";
     static String chromeBrowserExePath = "C:\\Users\\Ewelina\\Downloads\\chromedriver.exe";
@@ -38,6 +34,17 @@ public class Selectors {
         return RandomStringUtils.randomAlphabetic(7).substring(0, 6).toUpperCase() + RandomStringUtils.randomAlphabetic(5);
     }
 
+    public static String emailGenerator() {
+        com.github.javafaker.Faker faker = new com.github.javafaker.Faker();
+        return faker.internet().emailAddress();
+    }
+
+    public static String myEmailGenerator () {
+        com.github.javafaker.Faker faker = new com.github.javafaker.Faker();
+        return faker.name().firstName().substring(0, 4).toLowerCase() + "." + faker.name().lastName().substring(0,5).toLowerCase() + "@email.com";
+
+    }
+
     static String webSiteShop = "http://automationpractice.com/index.php";
     static String button_contact_us = "//*[@id='contact-link']/a";
     static String subject_selector = "//*[@id='id_contact']";
@@ -46,8 +53,19 @@ public class Selectors {
     static String message_selector = "message";
     static String submit_button_selector = "submitMessage";
     static String success_email_sent_selector = ".alert-success";
-//    static String alert_message_selector = ".alert-danger";
+    static String alert_message_selector = ".alert-danger";
 
+    static String webSiteOlx = "https://www.olx.pl/";
+    static String acceptCookies = "//*[@id='onetrust-accept-btn-handler']";
+    static String userEmail = "userEmail";
+    static String userPassword = "userPass";
+    static String myOlxButton = "//*[@id='topLoginLink']/span/strong";
+    static String myOlxLogout = "//*[@id='topLoginLink']";
+    static String zalogujSie = "se_userLogin";
+    static String wylogujSie = "//*[@id='login-box-logout']";
 
+    static String webSiteTravels = "https://phptravels.com/demo";
+    static String productButton = "/html/body/header/div/nav/div[2]/span";
+    static String howToStartButton = "/html/body/header/div/nav/div[2]/div/a[14]";
 
 }
