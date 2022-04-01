@@ -1,5 +1,6 @@
 package olx;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,7 +18,6 @@ public class OlxTests {
     public void test_cookies_olx() throws InterruptedException {
         testCookies();
     }
-
 
 
 

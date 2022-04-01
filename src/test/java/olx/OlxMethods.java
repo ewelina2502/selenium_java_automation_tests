@@ -25,8 +25,8 @@ public class OlxMethods extends OlxSelectors {
         driver.findElement(By.xpath(acceptCookies)).click();
         driver.findElement(By.xpath(myOlxButton)).click();
         Thread.sleep(2000);
-        driver.findElement(By.id(userEmail)).sendKeys("ewelina2502@o2.pl");
-        driver.findElement(By.id(userPassword)).sendKeys("Testowy123");
+        driver.findElement(By.id(userEmail)).sendKeys("admin");
+        driver.findElement(By.id(userPassword)).sendKeys("admin");
         driver.findElement(By.id(zalogujSie)).click();
         Actions actions = new Actions(driver);
         Thread.sleep(5000);
@@ -48,8 +48,8 @@ public class OlxMethods extends OlxSelectors {
         driver.findElement(By.xpath(acceptCookies)).click();
         driver.findElement(By.xpath(myOlxButton)).click();
         Thread.sleep(2000);
-        driver.findElement(By.id(userEmail)).sendKeys("ewelina2502@o2.pl");
-        driver.findElement(By.id(userPassword)).sendKeys("Testowy123");
+        driver.findElement(By.id(userEmail)).sendKeys("admin");
+        driver.findElement(By.id(userPassword)).sendKeys("admin");
         driver.findElement(By.id(zalogujSie)).click();
 
 
@@ -83,8 +83,6 @@ public class OlxMethods extends OlxSelectors {
         ex.printStackTrace();
     }
         driver.get(webSiteOlx);
-
-
 }
 
 
