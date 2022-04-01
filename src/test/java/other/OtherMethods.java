@@ -1,4 +1,4 @@
-package sample;
+package other;
 
 import methods.WebdriverPath;
 import org.apache.commons.io.FileUtils;
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 import static methods.Dates.dateHourAndSecounds;
 
-public class OtherMethods extends OtherSelectors{
+public class OtherMethods extends OtherSelectors {
 
     public static void googleSearch() throws InterruptedException, IOException {
         String t = dateHourAndSecounds();

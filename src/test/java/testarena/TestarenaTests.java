@@ -1,7 +1,7 @@
-package tests;
+package testarena;
 
 import org.testng.annotations.Test;
-import sample.TestsarenaMethods;
+import testarena.TestsarenaMethods;
 
 public class TestarenaTests extends TestsarenaMethods {
 

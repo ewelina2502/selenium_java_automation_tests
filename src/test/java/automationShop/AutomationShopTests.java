@@ -1,7 +1,6 @@
-package tests;
-
+package automationShop;
 import org.testng.annotations.Test;
-import sample.AutomationShopMethods;
+
 
 public class AutomationShopTests extends AutomationShopMethods {
 

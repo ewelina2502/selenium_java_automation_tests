@@ -1,4 +1,4 @@
-package sample;
+package other;
 
 public class OtherSelectors {
 

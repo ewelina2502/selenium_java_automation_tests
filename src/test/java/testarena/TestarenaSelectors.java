@@ -1,4 +1,4 @@
-package sample;
+package testarena;
 
 public class TestarenaSelectors {
 

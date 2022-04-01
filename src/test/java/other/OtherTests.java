@@ -1,7 +1,6 @@
-package tests;
+package other;
 
 import org.testng.annotations.Test;
-import sample.OtherMethods;
 
 import java.io.IOException;
 

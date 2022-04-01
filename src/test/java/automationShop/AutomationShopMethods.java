@@ -1,4 +1,4 @@
-package sample;
+package automationShop;
 
 import methods.RandomsMethods;
 import methods.WebdriverPath;
@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class AutomationShopMethods extends AutomationShopSelectors{
+public class AutomationShopMethods extends AutomationShopSelectors {
 
     public static void testAutomationShop() {
         WebdriverPath.startMethod();

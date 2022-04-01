@@ -1,11 +1,12 @@
-package sample;
+package testarena;
 import methods.WebdriverPath;
 import methods.RandomsMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import testarena.TestarenaSelectors;
 
-public class TestsarenaMethods extends TestarenaSelectors{
+public class TestsarenaMethods extends TestarenaSelectors {
 
     public static String testarena() {
         WebdriverPath.startMethod();
