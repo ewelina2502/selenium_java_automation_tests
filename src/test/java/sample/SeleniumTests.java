@@ -1,11 +1,13 @@
 package sample;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 
 public class SeleniumTests extends Methods {
 
     @Test
-    public void test_google() {
+    public void test_google() throws IOException, InterruptedException {
         googleSearch();
     }
 
@@ -25,7 +27,7 @@ public class SeleniumTests extends Methods {
     }
 
     @Test
-    public void test_negative_olx() throws InterruptedException {
+    public void test_negative_olx() throws InterruptedException, IOException {
         testNegativeOlxWithoutEmail();
     }
 

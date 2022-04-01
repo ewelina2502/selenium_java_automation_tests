@@ -1,11 +1,14 @@
 package sample;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
 
 
 public class Methods extends SelectorsAndGenerators {
@@ -14,7 +17,12 @@ public class Methods extends SelectorsAndGenerators {
         System.setProperty(webDriverChromeDriver, chromeBrowserExePath);
     }
 
-    public static void googleSearch() {
+    public static void googleSearch() throws InterruptedException, IOException {
+        Random randomGenerator = new Random();
+        int no = randomGenerator.nextInt(9999);
+        Date dNow = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+        String d = ft.format(dNow);
         start();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -23,6 +31,11 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.xpath(button_cookie)).click();
         driver.findElement(By.xpath(button_search)).sendKeys("pogoda", Keys.ENTER);
         assert driver.findElement(By.id(button_temp)).isEnabled();
+        Thread.sleep(4000);
+        File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(f, new File("C:/Users/Ewelina/Desktop/googlescreen" + d + ".png"));
+
+        System.out.println("The Screenshot is captured.");
         driver.quit();
     }
 
@@ -77,7 +90,7 @@ public class Methods extends SelectorsAndGenerators {
         driver.quit();
     }
 
-    public static void testNegativeOlxWithoutEmail() throws InterruptedException {
+    public static void testNegativeOlxWithoutEmail() throws InterruptedException, IOException {
         start();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -88,6 +101,13 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.id(userPassword)).sendKeys("Testowy123");
         driver.findElement(By.id(zalogujSie)).click();
         assert driver.findElement(By.xpath(allertError)).isEnabled();
+
+        Thread.sleep(4000);
+        File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(f, new File("C:/Users/Ewelina/Desktop/olxscreenshot01" +"1" +".png"));
+
+        System.out.println("The Screenshot is captured.");
+        driver.quit();
         driver.quit();
 
     }
