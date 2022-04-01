@@ -7,6 +7,10 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Random;
 
@@ -18,11 +22,16 @@ public class Methods extends SelectorsAndGenerators {
     }
 
     public static void googleSearch() throws InterruptedException, IOException {
-        Random randomGenerator = new Random();
-        int no = randomGenerator.nextInt(9999);
-        Date dNow = new Date();
-        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
-        String d = ft.format(dNow);
+//        Random randomGenerator = new Random();
+//        int no = randomGenerator.nextInt(9999);
+//        Date dNow = new Date();
+//        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+//        String d = ft.format(dNow);
+
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm");
+        String t = myDateObj.format(myFormatObj);
+
         start();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -33,7 +42,7 @@ public class Methods extends SelectorsAndGenerators {
         assert driver.findElement(By.id(button_temp)).isEnabled();
         Thread.sleep(4000);
         File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(f, new File("C:/Users/Ewelina/Desktop/googlescreen" + d + ".png"));
+        FileUtils.copyFile(f, new File("C:/Users/Ewelina/Desktop/" + t + "_googlescreen.png"));
 
         System.out.println("The Screenshot is captured.");
         driver.quit();
