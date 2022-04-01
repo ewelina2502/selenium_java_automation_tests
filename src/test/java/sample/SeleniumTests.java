@@ -51,6 +51,11 @@ public class SeleniumTests extends Methods {
         testLogAuth();
     }
 
+    @Test
+    public void test_garmin() throws InterruptedException {
+        testGarmin();
+    }
+
 
 
 }

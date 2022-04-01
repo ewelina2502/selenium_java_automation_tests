@@ -6,14 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Random;
-
+import static methods.Dates.dateAndHour;
+import static methods.Dates.dateHourAndSecounds;
 
 public class Methods extends SelectorsAndGenerators {
 
@@ -22,16 +16,8 @@ public class Methods extends SelectorsAndGenerators {
     }
 
     public static void googleSearch() throws InterruptedException, IOException {
-//        Random randomGenerator = new Random();
-//        int no = randomGenerator.nextInt(9999);
-//        Date dNow = new Date();
-//        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
-//        String d = ft.format(dNow);
 
-        LocalDateTime myDateObj = LocalDateTime.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm");
-        String t = myDateObj.format(myFormatObj);
-
+        String t = dateHourAndSecounds();
         start();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -42,7 +28,7 @@ public class Methods extends SelectorsAndGenerators {
         assert driver.findElement(By.id(button_temp)).isEnabled();
         Thread.sleep(4000);
         File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(f, new File("C:/Users/Ewelina/Desktop/" + t + "_googlescreen.png"));
+        FileUtils.copyFile(f, new File("C:/Users/eweli/Desktop/" + t + "_googlescreen.png"));
 
         System.out.println("The Screenshot is captured.");
         driver.quit();
@@ -164,6 +150,21 @@ public class Methods extends SelectorsAndGenerators {
         driver.quit();
     }
 
+    public static void testGarmin() throws InterruptedException {
+        start();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://apps.garmin.com/pl-PL/");
+        Thread.sleep(1000);
+        String search = "q";
+        driver.findElement(By.id(search)).click();
+        driver.findElement(By.id(search)).sendKeys("plants");
+        Thread.sleep(2000);
+        String magnifier = "/html/body/div[2]/div/div/form/div/span/button/span";
+        driver.findElement(By.xpath(magnifier)).click();
+        Thread.sleep(3000);
+        driver.quit();
+    }
 
 
 

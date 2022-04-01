@@ -6,7 +6,7 @@ import java.util.Locale;
 public class SelectorsAndGenerators {
 
     static String webDriverChromeDriver = "webdriver.chrome.driver";
-    static String chromeBrowserExePath = "C:\\Users\\Ewelina\\Downloads\\chromedriver.exe";
+    static String chromeBrowserExePath = "C:\\Users\\eweli\\Downloads\\chromedriver.exe";
 
     static String website_google = "https://www.google.pl/";
     static String button_cookie = "//*[@id=\"L2AGLb\"]/div";
