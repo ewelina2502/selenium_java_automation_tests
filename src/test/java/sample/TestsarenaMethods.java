@@ -20,8 +20,9 @@ public class TestsarenaMethods extends SelectorsAndGenerators {
         driver.findElement(By.xpath(button_testarena_admin)).click();
         driver.findElement(By.xpath(button_testarena_add)).click();
         String nameProject = generatorRandom();
+        String prefixProject = generatorRandom();
         driver.findElement(By.id(button_testarena_project_name)).sendKeys(nameProject);
-        driver.findElement(By.id(button_testarena_project_prefix)).sendKeys(printGenerator());
+        driver.findElement(By.id(button_testarena_project_prefix)).sendKeys(prefixProject);
         driver.findElement(By.id(button_testarena_project_desc)).sendKeys(printGenerator());
 
         driver.findElement(By.id(button_testarena_save)).click();
@@ -30,13 +31,8 @@ public class TestsarenaMethods extends SelectorsAndGenerators {
         driver.findElement(By.xpath(searchField)).sendKeys(nameProject);
         driver.findElement(By.xpath(searchButton)).click();
         assert driver.findElement(By.xpath(statusActive)).isEnabled();
-        driver.quit();
-
-
-
-
         System.out.println("TEST PASSED");
-//        driver.quit();
+        driver.quit();
     }
 
 }

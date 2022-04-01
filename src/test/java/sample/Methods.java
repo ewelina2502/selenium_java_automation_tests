@@ -26,26 +26,6 @@ public class Methods extends SelectorsAndGenerators {
         driver.quit();
     }
 
-    public static void testarena() {
-        start();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(testarena);
-        driver.findElement(By.id(bar_testarena_email)).sendKeys("administrator@testarena.pl");
-        driver.findElement(By.id(bar_testarena_password)).sendKeys("sumXQQ72$L");
-        driver.findElement(By.id(button_testarena_login)).click();
-        assert driver.findElement(By.xpath(button_testarena_admin)).isEnabled();
-        driver.findElement(By.xpath(button_testarena_admin)).click();
-        driver.findElement(By.xpath(button_testarena_add)).click();
-        driver.findElement(By.id(button_testarena_project_name)).sendKeys(generatorRandom());
-        driver.findElement(By.id(button_testarena_project_prefix)).sendKeys(generatorRandom());
-        driver.findElement(By.id(button_testarena_project_desc)).sendKeys(printGenerator());
-        driver.findElement(By.id(button_testarena_save)).click();
-        driver.findElement(By.xpath(correct_adding));
-        System.out.println("TEST PASSED");
-        driver.quit();
-    }
-
     public static void testAutomationShop(){
         start();
         WebDriver driver = new ChromeDriver();
@@ -85,6 +65,7 @@ public class Methods extends SelectorsAndGenerators {
         driver.findElement(By.id(userEmail)).sendKeys("ewelina2502@o2.pl");
         Thread.sleep(1000);
         driver.findElement(By.id(userPassword)).sendKeys("Testowy123");
+        Thread.sleep(1000);
         driver.findElement(By.id(zalogujSie)).click();
 
         Actions actions = new Actions(driver);
@@ -96,7 +77,7 @@ public class Methods extends SelectorsAndGenerators {
         driver.quit();
     }
 
-    public static void testNegatiwyOlxWithoutEmail() throws InterruptedException {
+    public static void testNegativeOlxWithoutEmail() throws InterruptedException {
         start();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -126,7 +107,7 @@ public class Methods extends SelectorsAndGenerators {
         driver.quit();
     }
 
-    public static void testChecboxes() {
+    public static void testCheckboxes() {
         start();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -138,7 +119,7 @@ public class Methods extends SelectorsAndGenerators {
 
     public static void testDownloadFile(){
         start();
-        WebDriver driver= new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(webSiteDownload);
         WebElement addFile = driver.findElement(By.xpath(downloadFile));
@@ -152,8 +133,8 @@ public class Methods extends SelectorsAndGenerators {
         driver.manage().window().maximize();
         driver.get(webSiteAuth);
         driver.quit();
-
     }
+
 
 
 

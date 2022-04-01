@@ -10,11 +10,6 @@ public class SeleniumTests extends Methods {
     }
 
     @Test
-    public void test_testarena() {
-        testarena();
-    }
-
-    @Test
     public void test_automation_shop() {
         testAutomationShop();
     }
@@ -31,7 +26,7 @@ public class SeleniumTests extends Methods {
 
     @Test
     public void test_negative_olx() throws InterruptedException {
-        testNegatiwyOlxWithoutEmail();
+        testNegativeOlxWithoutEmail();
     }
 
     @Test
@@ -41,7 +36,7 @@ public class SeleniumTests extends Methods {
 
     @Test
     public void test_checkboxes() {
-        testChecboxes();
+        testCheckboxes();
     }
 
     @Test
