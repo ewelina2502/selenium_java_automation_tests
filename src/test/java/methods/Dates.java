@@ -20,7 +20,7 @@ public class Dates {
 
     public static String dateHourAndSecounds() {
         LocalDateTime myDateObj = LocalDateTime.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
         return myDateObj.format(myFormatObj);
     }
 

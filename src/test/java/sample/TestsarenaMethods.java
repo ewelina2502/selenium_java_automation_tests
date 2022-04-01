@@ -1,15 +1,14 @@
 package sample;
-
+import methods.WebdriverPath;
+import methods.RandomsMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestsarenaMethods extends SelectorsAndGenerators {
-    public static void start() {
-        System.setProperty(webDriverChromeDriver, chromeBrowserExePath);
-    }
-    public static void testarena() {
-        start();
+public class TestsarenaMethods extends TestarenaSelectors{
+
+    public static String testarena() {
+        WebdriverPath.startMethod();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(testarena);
@@ -19,11 +18,11 @@ public class TestsarenaMethods extends SelectorsAndGenerators {
         assert driver.findElement(By.xpath(button_testarena_admin)).isEnabled();
         driver.findElement(By.xpath(button_testarena_admin)).click();
         driver.findElement(By.xpath(button_testarena_add)).click();
-        String nameProject = generatorRandom();
-        String prefixProject = generatorRandom();
+        String nameProject = RandomsMethods.generatorRandom();
+        String prefixProject = RandomsMethods.generatorRandom();
         driver.findElement(By.id(button_testarena_project_name)).sendKeys(nameProject);
         driver.findElement(By.id(button_testarena_project_prefix)).sendKeys(prefixProject);
-        driver.findElement(By.id(button_testarena_project_desc)).sendKeys(printGenerator());
+        driver.findElement(By.id(button_testarena_project_desc)).sendKeys(RandomsMethods.printGenerator());
 
         driver.findElement(By.id(button_testarena_save)).click();
         driver.findElement(By.xpath(correct_adding));
@@ -33,6 +32,7 @@ public class TestsarenaMethods extends SelectorsAndGenerators {
         assert driver.findElement(By.xpath(statusActive)).isEnabled();
         System.out.println("TEST PASSED");
         driver.quit();
+        return nameProject;
     }
 
 }
