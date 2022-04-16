@@ -30,13 +30,10 @@ public class AutomateDraft {
 
 
             actions.moveToElement(titleA);
-//            actions.clickAndHold();
-//            actions.moveToElement(titleC);
-//            actions.clickAndHold();
 
         actions.dragAndDrop(titleC,titleA);
             actions.release().perform();
 
-//            driver.quit();
+
         }
 }
