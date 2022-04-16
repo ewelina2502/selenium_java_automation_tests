@@ -12,7 +12,6 @@ public class OtherTests extends OtherMethods {
         googleSearch();
     }
 
-
     @Test
     public void test_travel() throws InterruptedException {
         testTravel();

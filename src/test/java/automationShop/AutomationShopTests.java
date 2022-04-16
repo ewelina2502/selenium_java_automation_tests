@@ -1,11 +1,13 @@
 package automationShop;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 
 public class AutomationShopTests extends AutomationShopMethods {
 
     @Test
-    public void test_automation_shop() {
+    public void test_automation_shop() throws IOException {
         testAutomationShop();
     }
 
