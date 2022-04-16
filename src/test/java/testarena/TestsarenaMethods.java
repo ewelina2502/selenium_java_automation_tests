@@ -34,6 +34,7 @@ public class TestsarenaMethods extends TestarenaSelectors {
         System.out.println("TEST PASSED");
         driver.quit();
         return nameProject;
+
     }
 
 }
