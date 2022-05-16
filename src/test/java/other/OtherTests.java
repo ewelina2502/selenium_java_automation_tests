@@ -27,4 +27,8 @@ public class OtherTests extends OtherMethods {
         testDownloadFile();
     }
 
+    @Test
+    public void test_moving_elements() {
+        movingelements();
+    }
 }

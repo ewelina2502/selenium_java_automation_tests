@@ -5,6 +5,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -30,7 +32,6 @@ public class OtherMethods extends OtherSelectors {
         Thread.sleep(4000);
         File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(f, new File("C:/Users/Ewelina/Desktop/" + t + "_googlescreen.png"));
-
         System.out.println("The Screenshot is captured.");
         driver.quit();
     }
@@ -69,6 +70,28 @@ public class OtherMethods extends OtherSelectors {
         WebElement addFile = driver.findElement(By.xpath(downloadFile));
         addFile.sendKeys("/Users/Ewelina/Desktop/2021-11-02_15-13.png");
         driver.findElement(By.xpath(downloadFile)).click();
+        driver.quit();
     }
 
+
+    public static void movingelements() {
+
+        WebdriverPath.startMethod();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        String url = "https://selenium08.blogspot.com/2020/01/click-and-hold.html";
+        driver.get(url);
+
+        WebElement cookies = driver.findElement(By.id("cookieChoiceDismiss"));
+        WebElement titleA = driver.findElement(By.xpath("//li[text()= 'A']"));
+        WebElement titleC = driver.findElement(By.xpath("//li[text()= 'C']"));
+        cookies.click();
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(titleA);
+        actions.dragAndDrop(titleC, titleA);
+        actions.release().perform();
+        driver.quit();
+    }
 }

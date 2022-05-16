@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.2</version>
+            <version>4.1.4</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-nop</artifactId>
-            <version>1.7.35</version>
+            <version>1.7.36</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -42,9 +42,6 @@
             <version>2.11.0</version>
         </dependency>
 
-
-
     </dependencies>
-
 
 </project>

@@ -9,7 +9,7 @@ public class OtherSelectors {
 
     static String webSiteTravels = "https://phptravels.com/demo";
     static String productButton = "/html/body/header/div/nav/div[2]/span";
-    static String howToStartButton = "/html/body/header/div/nav/div[2]/div/a[14]";
+    static String howToStartButton = "/html/body/header/div/nav/div[2]/div/a[13]";
 
     static String websiteCheckbox = "http://the-internet.herokuapp.com/checkboxes";
     static String checkboxes = "//*[@id='checkboxes']/input[1]";

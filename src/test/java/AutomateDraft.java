@@ -27,13 +27,10 @@ public class AutomateDraft {
             cookies.click();
 
             Actions actions = new Actions(driver);
-
-
             actions.moveToElement(titleA);
-
-        actions.dragAndDrop(titleC,titleA);
+            actions.dragAndDrop(titleC,titleA);
             actions.release().perform();
-
+            driver.quit();
 
         }
 }
